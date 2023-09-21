@@ -24,6 +24,8 @@ import glob
 from direct.directnotify.DirectNotifyGlobal import directNotify
 from otp.settings.Settings import Settings
 
+from toontown.toonbase.ToontownInjector import ToontownInjector
+
 notify = directNotify.newCategory('AltisClient')
 notify.setInfo(True)
 
@@ -179,6 +181,17 @@ del version
 base.loader = base.loader
 __builtin__.loader = base.loader
 autoRun = ConfigVariableBool('toontown-auto-run', 1)
+
+"""
+This code block is a magic word to start a Toontown Injector
+"""
+from otp.ai.MagicWordManager import *
+
+@magicWord(category=CATEGORY_PROGRAMMER)
+def startInjector():
+    injector = ToontownInjector()
+    taskMgr.add(injector.tick, 'test')
+    return "Starting Toontown Injector"
 
 if autoRun:
     try:

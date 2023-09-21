@@ -2,6 +2,9 @@
 # = Meta =
 # ====================
 
+# ClientStart
+startInjector() - Starts a ToonTown Injector
+
 # MagicWordManagerAI
 help(wordname=None) - Displays arguments for a word
 words() - lists magic words
