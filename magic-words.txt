@@ -1,0 +1,192 @@
+# ====================
+# = Meta =
+# ====================
+
+# MagicWordManagerAI
+help(wordname=None) - Displays arguments for a word
+words() - lists magic words
+
+# DistributedPlayerAI
+system(message) - broadcasts a message
+restart(minutes) - Maintenance message sequence
+update(minutes, reason) - Update message sequence
+accessLevel(accessLevel, storage='PERSISTENT', showGM=1) - updates a targets access level
+
+# BanManagerAI
+kick(reason='No reason specified') - kicks a player
+kickId(id, reason='No reason specified') - kicks a player based on ID
+ban(reason) - bans and kicks a player from the server
+banId(id, reason) - bans and kicks a player from the server based on ID
+
+# ====================
+# = Toon Stuff =
+# ====================
+
+# DistributedToon
+zone(zoneId) - Changes the ZoneId of the invoker
+enableGC() - Enables garbage collection
+disableGC() - Disables garbage collection
+soprano() - teleports you somewhere ?
+oldttc() - teleports you to old ttc?
+globalTp(streetZone) - teleports you to a street zone
+sleep() - toggles sleeping
+i60Pan() - not sure
+i60PanStop() - disables that
+
+# DistributedToonAI (there is so much stuff here)
+
+# ====================
+# = Boss Stuff =
+# ====================
+
+# DistributedBoardbotBossAI
+skipChairman() - Skips to the final round of the Chairman Boss
+killChairman() - Kills the chairman
+
+# DistributedBossbotBossAI
+skipCEO() - skips to the 2nd round of a CEO
+skipCEOFinal() - skips to the final round of a CEO
+killCEO() - Kills the CEO
+
+# DistributedLawbotBossAI
+skipCJ() - skips to the final round of the CJ
+killCJ() - Kills the CJ
+
+# DistributedCashbotBossAI
+restartCraneRound() - restarts the crane round in a CFO
+skipCFO() - skips to the final round in a CFO
+cfo2() - skips to the final round in a CFO
+killCFO() - kills the CFO
+
+# DistributedSellbotBossAI
+skipVP() - Skips to the final round in a VP
+killVP() - Kills the VP
+stunVP() - Stuns the VP
+
+# DistributedSuitPathPlanner
+suitPaths() - Shows suit paths
+
+# DistributedSuitPlannerAI
+spawnCog(name, level, revives=0, skelecog=0, waiter=0) - spawns a cog (i'm assuming revives is v2.0)
+
+# ====================
+# = Facilities =
+# ====================
+
+# DistributedFactory
+factoryWarp(zoneNum) - warps you to a factory zone
+
+# DistributedAvatar
+warp() - Warps somewhere
+loop(animation) - loops an animation
+pose(animation, frame, part=None) - Freezes into a animation pose
+pingPong(animation, start=None, end=None, part=None) - Animate a target bouning back and forth between the animation start/end
+rightHand(prop) - generates a prop in the targets right hand
+leftHand(prop) - generates a prop in the targets Left Hand
+
+# DistributedMailManagerAI
+testSimpleMail(contents) - tests simple mail?
+
+# LocalAvatar
+slow() - decreased walk speed
+speednormal() - normal walk speed
+run() - increased walk speed
+collisionsOff() - disables collisions
+collisionsOn() - enables collisions
+gravity(value) - modifies gravity
+xyz(x, y, z) - sets the position of the invoker
+hpr(h, p, r) - sets the rotation of the invoker
+
+# OTPBase
+oobe() - toggles out of body experience view
+oobeCull() - toggles out of body experience with culling
+wire() - toggles wire frame view
+idNametags() - show avater IDs in nametags
+nameNametags() - only show avatar names in nametags
+a2d() - Toggles aspect2d
+placer() - toggles camera placer
+explorer() - toggles scene graph explorer
+neglect() - toggles the neglection of network updates on the client
+backgroundColor(r = None, g=1, b=1, a=1) - sets background color (leave blank for default)
+
+# DialogManagerAI
+testDialog() - testNPCChat?
+
+# DistributedMailboxZeroMgrAI
+setMailboxMgrOnline() - Sets Mailbox Mgr to running
+
+# DistributedSillyMeterMgrAI
+setSillyMeterPhase(phase) - sets the silly meter
+
+# FishManagerAI
+fish(fishName) - Register/unregister the fish to be caught on the invoker
+
+# NewsManagerAI
+startHoliday(holidayId) - Sets holiday to specified id
+addHoliday(holidayId) - Adds holiday to ongoing holidays
+removeHoliday(holidayId) - Removes holiday from ongoing holidays
+
+# QuestManagerAI
+quests(command, arg0=0, arg1=0) = does some quest stuff, command can be ['clear', 'clearHistory', 'add', 'remove', 'list', 'bagSize', 'progress', 'getHistory', 'addHistory', 'getQuests']
+
+# DistributedBattleBaseAI
+skipMove() - skips the current battle movie
+
+# MinigameCreatorAI
+minigame(command, arg0=None) - Command set for Trolley Minigames
+
+# DistributedRace
+race(command) - Command set for Racing
+
+# ====================
+# = Event Stuff =
+# ====================
+
+# DistributedEventAI
+betaeventttc(state) - sets the betaevent state for ttc
+betaevent(state) - sets the betaevent state
+
+# DistributedFireworksShowAI
+fireworks(showName='july4') - starts a firework show
+
+# TTHood
+spooky() - activates "spooky" in the current area
+
+# TTOHood
+spooky() - activates "spooky" in the current area
+
+# ====================
+# = Estate Stuff =
+# ====================
+
+# DistributedFlowerAI
+gardenGrowFlowers() - grows garden flowers
+gardenPickAll() - picks all the garden flowers
+
+# DistributedGagTreeAI
+growTree(track, index, grown=15) - grows a gag tree?
+treeFruit(track, index) - i have no idea
+
+# DistributedFurnitureManagerAI
+findCloset() - finds the closet
+recoverCloset() - Recovers the closet?
+fillAttic() - Moves everything to the attic
+emptyHouse() - deletes everything in the house
+
+#DistributedGardenPlotAI
+gardenFlowerAll(species=49, variety=0) - I think this makes flowers for everybody, i'm not sure
+allGardenSpecials() - gives somebody the garden specials
+
+# ====================
+# = Some Cog Games =
+# ====================
+
+# DistCogdoFlyingGameAI
+endFlying() - ends the flying game?
+
+# DistCogdoMazeGame
+revealMap() - shows the answer to the maze game?
+
+# DistCogdoMazeGameAI
+endMaze() - ends the maze game
+

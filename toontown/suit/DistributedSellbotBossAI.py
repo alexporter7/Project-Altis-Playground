@@ -545,3 +545,26 @@ def killVP():
         return "You aren't in a VP!"
     boss.b_setState('Victory')
     return 'Killed VP.'
+
+@magicWord(category=CATEGORY_PROGRAMMER)
+def stunVp():
+    """
+    Stuns the VP
+    """
+    invoker = spellbook.getInvoker()
+    boss = None
+    for distributedObject in simbase.air.doId2do.values(): # For all distributed objects
+        if isinstance(distributedObject, DistributedSellbotBossAI): # If the DO is a Server Side VP
+            if invoker.doId in distributedObject.involvedToons: # If the invoker is involved with the VP
+                boss = distributedObject # Set the boss to the found distributed object
+                break # break from the loop since we already found the VP
+
+    # If the boss wasn't found that means the toon isn't in a VP
+    if not boss:
+        return "You aren't in a VP!"
+    # If the boss isn't in Battle Three (fight round) then they can't stun the VP
+    if boss.state not in 'BattleThree':
+        return "You can't stun the VP in this round"
+    # Otherwise stun the VP
+    boss.hitBossInsides()
+    return "Stunned the Sellbot VP"
