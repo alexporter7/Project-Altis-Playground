@@ -954,6 +954,30 @@ def skipCEO():
         return "You can't skip this round."
     boss.exitIntroduction()
     boss.b_setState('PrepareBattleThree')
+
+@magicWord(category=CATEGORY_PROGRAMMER)
+def skipToFeedingRound():
+    """
+    Skips to the feeding round of the CEO
+    """
+    invoker = spellbook.getInvoker()
+    boss = None
+    for distributedObject in simbase.air.doId2do.values(): # For all distributed objects
+        if isinstance(distributedObject, DistributedBossbotBossAI): # If the DO is a Server Side CEO
+            if invoker.doId in distributedObject.involvedToons: # If the invoker is involved with the CEO
+                boss = distributedObject # Set the boss to the found distributed object
+                break # break from the loop since we already found the CEO
+
+    # If the boss wasn't found that means the toon isn't in a CEO
+    if not boss:
+        return "You aren't in a CEO!"
+    # If the boss is past the feeding round
+    if boss.state in ('PrepareBattleThree', 'BattleThree', 'PrepareBattleFour', 'BattleFour'):
+        return "You can't skip to the feeding round right now"
+    # Otherwise go to the feeding round
+    boss.exitIntroduction()
+    boss.b_setState('PrepareBattleTwo')
+
 	
 @magicWord(category=CATEGORY_ADMINISTRATOR)
 def skipCEOFinal():

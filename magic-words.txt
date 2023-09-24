@@ -48,6 +48,7 @@ killChairman() - Kills the chairman
 
 # DistributedBossbotBossAI
 skipCEO() - skips to the 2nd round of a CEO
+skipToFeedingRound() - skips to feeding round of CEO
 skipCEOFinal() - skips to the final round of a CEO
 killCEO() - Kills the CEO
 
